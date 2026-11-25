@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StillWell | Mental Health Resources</title>
+
+    <link rel="stylesheet" href="css/course-library.css">
+    <link rel="stylesheet" href="css/resources.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+<div class="dashboard-container" id="dashboardContainer">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i data-lucide="brain"></i>
+            </div>
+            <h2>StillWell</h2>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html" class="menu-item" data-tooltip="Overview">
+                <span class="menu-icon"><i data-lucide="layout-dashboard"></i></span>
+                <span class="menu-text">Overview</span>
+            </a>
+
+            <a href="mood-tracker.html" class="menu-item" data-tooltip="Mood Tracker">
+                <span class="menu-icon"><i data-lucide="heart"></i></span>
+                <span class="menu-text">Mood Tracker</span>
+            </a>
+
+            <a href="assessment.html" class="menu-item" data-tooltip="Self-Assessment">
+                <span class="menu-icon"><i data-lucide="clipboard-check"></i></span>
+                <span class="menu-text">Self-Assessment</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Recommendations">
+                <span class="menu-icon"><i data-lucide="lightbulb"></i></span>
+                <span class="menu-text">Recommendations</span>
+            </a>
+
+            <div class="menu-label">LEARNING</div>
+
+            <a href="resources.html" class="menu-item active" data-tooltip="Mental Health Resources">
+                <span class="menu-icon"><i data-lucide="book-open"></i></span>
+                <span class="menu-text">Mental Health Resources</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Educational Games">
+                <span class="menu-icon"><i data-lucide="gamepad-2"></i></span>
+                <span class="menu-text">Educational Games</span>
+            </a>
+
+            <a href="course-library.html" class="menu-item" data-tooltip="Self-paced Courses">
+                <span class="menu-icon"><i data-lucide="graduation-cap"></i></span>
+                <span class="menu-text">Self-paced Courses</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Achievements">
+                <span class="menu-icon"><i data-lucide="trophy"></i></span>
+                <span class="menu-text">Achievements</span>
+            </a>
+
+            <div class="menu-label">PERSONAL</div>
+
+            <a href="#" class="menu-item" data-tooltip="Professional Counseling">
+                <span class="menu-icon"><i data-lucide="user-round-check"></i></span>
+                <span class="menu-text">Professional Counseling</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Profile">
+                <span class="menu-icon"><i data-lucide="user-round"></i></span>
+                <span class="menu-text">Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="menu-item" data-tooltip="Settings">
+                <span class="menu-icon"><i data-lucide="settings"></i></span>
+                <span class="menu-text">Settings</span>
+            </a>
+
+            <a href="index.html" class="menu-item logout-link" data-tooltip="Log Out">
+                <span class="menu-icon"><i data-lucide="log-out"></i></span>
+                <span class="menu-text">Log Out</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+            <div class="header-left">
+                <p class="header-subtitle">YOUR PERSONAL WELLNESS SPACE</p>
+            </div>
+
+            <div class="header-profile">
+                <span class="current-date" id="currentDate"></span>
+
+                <div class="profile-info">
+                    <div class="profile-avatar" id="profileAvatar">T</div>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <section class="resources-content">
+
+            <!-- INTRODUCTION BANNER -->
+            <section class="resources-hero">
+
+                <div class="resources-hero-content">
+
+                    <p class="eyebrow">LEARN • UNDERSTAND • TAKE CARE</p>
+
+                    <h1>Mental Health Resources</h1>
+
+                    <p>
+                        Explore helpful information, educational materials,
+                        and practical activities to better understand your
+                        mental health and support your well-being.
+                    </p>
+
+                    <div class="resources-hero-note">
+                        <i data-lucide="heart-handshake"></i>
+                        Small steps toward a healthier mind.
+                    </div>
+
+                </div>
+
+                <div class="resources-hero-art">
+                    <i data-lucide="brain"></i>
+                </div>
+
+            </section>
+
+
+            <!-- RESOURCE TYPES -->
+            <section class="resource-types-section">
+
+                <div class="resources-section-heading">
+                    <p class="eyebrow">EXPLORE AND DISCOVER</p>
+                    <h2>Explore Learning Materials</h2>
+                    <p>Choose the type of resource you want to explore.</p>
+                </div>
+
+                <div class="resource-type-grid">
+
+                    <button class="resource-type-card" data-type="articles">
+                        <span class="resource-type-icon articles-icon">
+                            <i data-lucide="book-open"></i>
+                        </span>
+                        <h3>Articles</h3>
+                        <p>Read informative articles about mental health and emotional well-being.</p>
+                        <span class="resource-type-link">Explore articles <i data-lucide="arrow-right"></i></span>
+                    </button>
+
+                    <button class="resource-type-card" data-type="videos">
+                        <span class="resource-type-icon videos-icon">
+                            <i data-lucide="video"></i>
+                        </span>
+                        <h3>Videos</h3>
+                        <p>Watch educational videos about mental wellness and self-care.</p>
+                        <span class="resource-type-link">Watch videos <i data-lucide="arrow-right"></i></span>
+                    </button>
+
+                    <button class="resource-type-card" data-type="infographics">
+                        <span class="resource-type-icon infographics-icon">
+                            <i data-lucide="chart-no-axes-column"></i>
+                        </span>
+                        <h3>Infographics</h3>
+                        <p>Understand important mental health topics through visual guides.</p>
+                        <span class="resource-type-link">View infographics <i data-lucide="arrow-right"></i></span>
+                    </button>
+
+                    <button class="resource-type-card" data-type="exercises">
+                        <span class="resource-type-icon exercises-icon">
+                            <i data-lucide="flower-2"></i>
+                        </span>
+                        <h3>Practical Exercises</h3>
+                        <p>Try simple activities that encourage mindfulness and healthy coping.</p>
+                        <span class="resource-type-link">Try activities <i data-lucide="arrow-right"></i></span>
+                    </button>
+
+                    <button class="resource-type-card" data-type="guides">
+                        <span class="resource-type-icon guides-icon">
+                            <i data-lucide="file-down"></i>
+                        </span>
+                        <h3>Downloadable Guides / PDFs</h3>
+                        <p>Access helpful guides and downloadable mental wellness materials.</p>
+                        <span class="resource-type-link">View guides <i data-lucide="arrow-right"></i></span>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESOURCE LIBRARY PLACEHOLDER -->
+            <section class="resource-library-section">
+
+                <div class="resources-section-heading">
+                    <p class="eyebrow">YOUR LEARNING LIBRARY</p>
+                    <h2>Available Resources</h2>
+                    <p>Discover materials designed to support your mental well-being.</p>
+                </div>
+
+                <div class="resource-controls">
+
+                    <div class="resource-search">
+                        <i data-lucide="search"></i>
+                        <input
+                            type="text"
+                            id="resourceSearch"
+                            placeholder="Search mental health resources..."
+                        >
+                    </div>
+
+                    <select id="resourceFilter">
+                        <option value="all">All Resources</option>
+                        <option value="articles">Articles</option>
+                        <option value="videos">Videos</option>
+                        <option value="infographics">Infographics</option>
+                        <option value="exercises">Practical Exercises</option>
+                        <option value="guides">Downloadable Guides / PDFs</option>
+                    </select>
+
+                </div>
+
+                <div class="resource-grid" id="resourceGrid">
+                    <!-- Resource cards will be added in the next step. -->
+                </div>
+
+                <div class="resource-empty-state" id="resourceEmptyState">
+                    <i data-lucide="book-open"></i>
+                    <h3>Resources are being prepared</h3>
+                    <p>Helpful learning materials will appear here.</p>
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+
+            <span>© 2026 StillWell. All rights reserved.</span>
+
+            <span>
+                <i data-lucide="heart"></i>
+                Your journey to better well-being starts here.
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- DATE AND ICONS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const dateElement = document.getElementById("currentDate");
+
+    if (dateElement) {
+        dateElement.textContent = new Date().toLocaleDateString("en-US", {
+            weekday: "long",
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+        });
+    }
+
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+
+});
+</script>
+<!-- Supabase Library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Supabase Configuration -->
+<script src="js/supabase.js"></script>
+
+<!-- Mental Health Resources -->
+<script src="js/resources.js"></script></body>
+</html>

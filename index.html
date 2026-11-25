@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StillWell | Mental Wellness</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- LEFT PANEL -->
+        <section class="welcome-section">
+
+            <div class="brand">
+                <h1>StillWell <span>.</span></h1>
+                <p class="tagline">Your little space for mental wellness.</p>
+            </div>
+
+            <img
+                src="assets/mascot.png"
+                alt="StillWell Mascot"
+                class="mascot"
+            >
+
+            <div class="welcome-message">
+
+                <span class="eyebrow">YOUR WELLBEING SPACE</span>
+
+                <h2>
+                    A little space<br>
+                    just for you.
+                </h2>
+
+                <p>
+                    Take a breath. You're right where you need to be.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT PANEL -->
+        <section class="login-section">
+
+            <div class="login-form">
+
+                <span class="eyebrow">WELCOME BACK</span>
+
+                <h2>Log in</h2>
+
+                <p class="form-description">
+                    Sign in to continue to your space.
+                </p>
+
+
+                <!-- LOGIN FORM -->
+                <form id="loginForm" method="post">
+                    <!-- EMAIL -->
+                    <div class="form-group">
+
+                        <label for="email">Email</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="form-group">
+
+                        <label for="password">Password</label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="At least 8 characters"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                data-target="password"
+                                aria-label="Show or hide password"
+                            >
+                                <span>👁</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOGIN ERROR MESSAGE -->
+                    <p
+                        id="loginError"
+                        class="password-error"
+                        aria-live="polite"
+                    ></p>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+                        Log in <span>→</span>
+                    </button>
+
+                </form>
+
+
+                <!-- LOGIN LINKS -->
+                <div class="login-links">
+
+                    <a href="#" id="forgotPassword">
+                        Forgot password?
+                    </a>
+
+                    <p>
+                        New to StillWell?
+
+                        <a href="register.html" id="createAccount">
+                            Create an account
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <!-- FOOTER LINKS -->
+                <div class="footer-links">
+
+                    <a href="#" id="urgentHelp">
+                        Need urgent help?
+                    </a>
+
+                    <a href="#" id="privacyPolicy">
+                        Privacy policy
+                    </a>
+
+                    <a href="#" id="termsOfUse">
+                        Terms of use
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- SUPABASE LIBRARY -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- SUPABASE CONFIGURATION -->
+    <script src="js/supabase.js"></script>
+
+    <!-- MAIN JAVASCRIPT -->
+    <script src="js/script.js"></script>
+</body>
+</html>

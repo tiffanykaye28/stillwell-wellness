@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StillWell | Personalized Recommendations</title>
+    <link rel="stylesheet" href="css/recommendations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div class="dashboard-container" id="dashboardContainer">
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon"><i data-lucide="flower-2"></i></div>
+            <h2>StillWell</h2>
+            <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Toggle sidebar">
+                <i data-lucide="panel-left"></i>
+            </button>
+        </div>
+
+        <p class="menu-label">MAIN MENU</p>
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item" data-tooltip="Overview">
+                <span class="menu-icon"><i data-lucide="layout-dashboard"></i></span>
+                <span class="menu-text">Overview</span>
+            </a>
+            <a href="mood-tracker.html" class="menu-item" data-tooltip="Mood Tracker">
+                <span class="menu-icon"><i data-lucide="smile"></i></span>
+                <span class="menu-text">Mood Tracker</span>
+            </a>
+            <a href="assessment.html" class="menu-item" data-tooltip="Self-Assessment">
+                <span class="menu-icon"><i data-lucide="clipboard-check"></i></span>
+                <span class="menu-text">Self-Assessment</span>
+            </a>
+            <a href="recommendations.html" class="menu-item active" aria-current="page" data-tooltip="Recommendations">
+                <span class="menu-icon"><i data-lucide="heart-handshake"></i></span>
+                <span class="menu-text">Recommendations</span>
+            </a>
+
+            <p class="menu-label">LEARNING</p>
+            <a href="#" class="menu-item" data-tooltip="Mental Health Resources">
+                <span class="menu-icon"><i data-lucide="book-open"></i></span>
+                <span class="menu-text">Mental Health Resources</span>
+            </a>
+            <a href="#" class="menu-item" data-tooltip="Educational Games">
+                <span class="menu-icon"><i data-lucide="gamepad-2"></i></span>
+                <span class="menu-text">Educational Games</span>
+            </a>
+            <a href="course-library.html" class="menu-item" data-tooltip="Self-paced Courses">
+                <span class="menu-icon"><i data-lucide="graduation-cap"></i></span>
+                <span class="menu-text">Self-paced Courses</span>
+            </a>
+            <a href="#" class="menu-item" data-tooltip="Achievements">
+                <span class="menu-icon"><i data-lucide="trophy"></i></span>
+                <span class="menu-text">Achievements</span>
+            </a>
+
+            <p class="menu-label">PERSONAL</p>
+            <a href="#" class="menu-item" data-tooltip="Professional Counseling">
+                <span class="menu-icon"><i data-lucide="calendar-heart"></i></span>
+                <span class="menu-text">Professional Counseling</span>
+            </a>
+            <a href="#" class="menu-item" data-tooltip="Profile">
+                <span class="menu-icon"><i data-lucide="user-round"></i></span>
+                <span class="menu-text">Profile</span>
+            </a>
+           <a href="#" class="menu-item" data-tooltip="Settings">
+                <span class="menu-icon"><i data-lucide="settings"></i></span>
+                <span class="menu-text">Settings</span>
+            </a>
+            <a href="index.html" class="menu-item logout-link" data-tooltip="Log Out">
+                <span class="menu-icon"><i data-lucide="log-out"></i></span>
+                <span class="menu-text">Log Out</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="menu-item" data-tooltip="Settings">
+                <span class="menu-icon"><i data-lucide="settings"></i></span>
+                <span class="menu-text">Settings</span>
+            </a>
+            <button class="menu-item logout-link" id="logoutButton" type="button" data-tooltip="Log Out">
+                <span class="menu-icon"><i data-lucide="log-out"></i></span>
+                <span class="menu-text">Log Out</span>
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div>
+                <p class="header-eyebrow">YOUR PERSONAL WELLNESS SPACE</p>
+                <h1>Personalized Recommendations</h1>
+            </div>
+            <div class="header-right">
+                <span class="today-date" id="todayDate"></span>
+                <div class="profile-avatar" id="profileInitial">S</div>
+            </div>
+        </header>
+
+        <section class="page-content">
+            <section class="hero">
+                <div class="hero-copy">
+                    <span class="hero-tag">
+                        <i data-lucide="sparkles"></i> PERSONALIZED WELLNESS
+                    </span>
+                    <h2>Small steps can make a difference.</h2>
+                    <p>
+                        Explore activities selected using your recent mood
+                        check-ins and self-assessment reflections. Choose what
+                        feels manageable for you today.
+                    </p>
+                    <div class="privacy-note">
+                        <i data-lucide="shield-check"></i>
+                        Your recommendations are based on your own StillWell records.
+                    </div>
+                </div>
+                <div class="hero-art" aria-hidden="true">
+                    <div class="hero-orbit"></div>
+                    <div class="hero-flower">🌷</div>
+                    <span class="hero-spark">✦</span>
+                </div>
+            </section>
+
+            <section class="data-summary">
+                <article class="summary-card">
+                    <span class="summary-icon purple"><i data-lucide="smile"></i></span>
+                    <div>
+                        <small>LATEST MOOD</small>
+                        <strong id="latestMood">Loading...</strong>
+                        <span id="moodDate">Checking your check-ins</span>
+                    </div>
+                </article>
+
+                <article class="summary-card">
+                    <span class="summary-icon pink"><i data-lucide="clipboard-check"></i></span>
+                    <div>
+                        <small>LATEST ASSESSMENT</small>
+                        <strong id="latestAssessment">Loading...</strong>
+                        <span id="assessmentDate">Checking your results</span>
+                    </div>
+                </article>
+
+                <article class="summary-card">
+                    <span class="summary-icon green"><i data-lucide="heart-handshake"></i></span>
+                    <div>
+                        <small>RECOMMENDATIONS</small>
+                        <strong id="recommendationCount">—</strong>
+                        <span>Matched to your recent records</span>
+                    </div>
+                </article>
+            </section>
+
+            <section class="section-block">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">YOUR WELLNESS PLAN</p>
+                        <h2>Recommended for you</h2>
+                        <p>
+                            Suggestions are matched using transparent rules
+                            from your latest available records.
+                        </p>
+                    </div>
+                    <button class="refresh-button" id="refreshButton" type="button">
+                        <i data-lucide="refresh-cw"></i> Refresh
+                    </button>
+                </div>
+
+                <div id="recommendationNotice" class="notice" role="status">
+                    Loading your personalized recommendations...
+                </div>
+                <div class="recommendation-grid" id="recommendationGrid"></div>
+            </section>
+
+            <section class="section-block history-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">YOUR ACTIVITY</p>
+                        <h2>Recommendation activity</h2>
+                        <p>
+                            Track the activities you have tried and tell us
+                            whether they were helpful.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="activityHistory" class="history-list">
+                    <p class="muted">Loading your activity...</p>
+                </div>
+            </section>
+
+            <section class="safety-note">
+                <i data-lucide="info"></i>
+                <p>
+                    <strong>A gentle reminder:</strong> These suggestions are
+                    for general well-being and self-care. They are not a
+                    diagnosis or a substitute for professional care. If your
+                    concerns feel difficult to manage, consider contacting a
+                    trusted person or qualified mental health professional.
+                </p>
+            </section>
+        </section>
+
+        <footer class="page-footer">
+            Made with care by StillWell <span>♡</span>
+        </footer>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/recommendations.js"></script>
+</body>
+</html>

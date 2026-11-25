@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StillWell | Self-Assessment</title>
+
+    <link rel="stylesheet" href="css/assessment.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+<div class="dashboard-container">
+
+<aside class="sidebar" id="sidebar">
+            <div class="brand">
+            <div class="brand-icon">
+                <i data-lucide="brain"></i>
+            </div>
+            <h2>StillWell</h2>
+        </div>
+
+        <button class="sidebar-toggle" id="sidebarToggle" type="button"
+                aria-label="Toggle sidebar" aria-expanded="true">
+            <i data-lucide="panel-left"></i>
+        </button>
+
+        <p class="menu-label">MAIN MENU</p>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item" data-tooltip="Overview">
+                <span class="menu-icon"><i data-lucide="layout-dashboard"></i></span>
+                <span class="menu-text">Overview</span>
+            </a>
+
+            <a href="mood-tracker.html" class="menu-item" data-tooltip="Mood Tracker">
+                <span class="menu-icon"><i data-lucide="smile"></i></span>
+                <span class="menu-text">Mood Tracker</span>
+            </a>
+
+            <a href="assessment.html" class="menu-item active" data-tooltip="Self-Assessment">
+                <span class="menu-icon"><i data-lucide="clipboard-check"></i></span>
+                <span class="menu-text">Self-Assessment</span>
+            </a>
+
+
+            <a href="recommendations.html" class="menu-item">
+                <span class="menu-icon"><i data-lucide="heart-handshake"></i></span>
+                <span class="menu-text">Recommendations</span>
+            </a>
+
+            <p class="menu-label">LEARNING</p>
+
+            <a href="#" class="menu-item" data-tooltip="Mental Health Resources">
+                <span class="menu-icon"><i data-lucide="book-open"></i></span>
+                <span class="menu-text">Mental Health Resources</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Educational Games">
+                <span class="menu-icon"><i data-lucide="gamepad-2"></i></span>
+                <span class="menu-text">Educational Games</span>
+            </a>
+
+            <a href="course-library.html" class="menu-item" data-tooltip="Self-paced Courses">
+                <span class="menu-icon"><i data-lucide="graduation-cap"></i></span>
+                <span class="menu-text">Self-paced Courses</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Achievements">
+                <span class="menu-icon"><i data-lucide="trophy"></i></span>
+                <span class="menu-text">Achievements</span>
+            </a>
+
+            <p class="menu-label">PERSONAL</p>
+
+            <a href="#" class="menu-item" data-tooltip="Professional Counseling">
+                <span class="menu-icon"><i data-lucide="users"></i></span>
+                <span class="menu-text">Professional Counseling</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Profile">
+                <span class="menu-icon"><i data-lucide="user-round"></i></span>
+                <span class="menu-text">Profile</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="menu-item" data-tooltip="Settings">
+                <span class="menu-icon"><i data-lucide="settings"></i></span>
+                <span class="menu-text">Settings</span>
+            </a>
+
+            <a href="index.html" class="menu-item logout-link" data-tooltip="Log Out">
+                <span class="menu-icon"><i data-lucide="log-out"></i></span>
+                <span class="menu-text">Log Out</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div class="page-title">
+                <h1>Self-Assessment</h1>
+            </div>
+
+            <div class="header-right">
+                <div class="today-date">
+                    <i data-lucide="calendar-days"></i>
+                    <span id="todayDate"></span>
+                </div>
+
+                <button class="notification-button" type="button" aria-label="Notifications">
+                    <i data-lucide="bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile-avatar" id="profileInitial">S</div>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <section class="hero">
+                <div class="hero-copy">
+                    <p class="eyebrow">SELF-ASSESSMENT</p>
+                    <h1>Know Yourself Better.</h1>
+                    <p>
+                        Take a moment to understand your mental and emotional
+                        well-being through guided assessments.
+                    </p>
+                </div>
+
+                <div class="hero-art" aria-hidden="true">
+                    <div class="hero-circle"></div>
+                    <div class="hero-clipboard">
+                        <div class="clipboard-clip"></div>
+                        <div class="check-line"><span>✓</span><i></i></div>
+                        <div class="check-line"><span>✓</span><i></i></div>
+                        <div class="check-line"><span>✓</span><i></i></div>
+                    </div>
+                    <div class="hero-head">
+                        <div class="head-heart">♡</div>
+                    </div>
+                    <div class="hero-leaf leaf-left">❧</div>
+                    <div class="hero-leaf leaf-right">❧</div>
+                    <div class="hero-spark">✦</div>
+                </div>
+            </section>
+
+            <section id="categoryView">
+                <div class="section-heading">
+                    <div>
+                        <h2>Choose an Assessment</h2>
+                        <p>
+                            Select an area you want to assess and gain
+                            personalized insights.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="assessmentGrid" class="assessment-grid"></div>
+
+                <section class="history-panel">
+                    <div class="history-heading">
+                        <div class="history-title">
+                            <div class="history-icon">
+                                <i data-lucide="clock-3"></i>
+                            </div>
+                            <div>
+                                <h2>Assessment History</h2>
+                                <p>View your previous assessments and track your progress over time.</p>
+                            </div>
+                        </div>
+
+                        <button id="clearHistory" class="view-history-button" type="button">
+                            Clear History
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div id="historyContent" class="history-content">
+                        <div class="empty-history">
+                            <span>♡</span>
+                            <strong>No assessments yet</strong>
+                            <p>Your completed assessments will appear here.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section id="questionnaireView" class="questionnaire-panel hidden" aria-live="polite">
+                <div class="questionnaire-top">
+                    <button id="backToCategories" class="text-button" type="button">
+                        <i data-lucide="arrow-left"></i>
+                        All assessments
+                    </button>
+                    <span id="questionCategory" class="category-pill"></span>
+                </div>
+
+                <div class="questionnaire-heading">
+                    <p class="eyebrow">SELF-REFLECTION QUESTIONNAIRE</p>
+                    <h2 id="questionnaireTitle"></h2>
+                    <p id="questionnaireDescription"></p>
+                </div>
+
+                <div class="progress-meta">
+                    <span id="questionProgressText">Question 1 of 8</span>
+                    <span id="questionProgressPercent">0%</span>
+                </div>
+
+                <div class="progress-track">
+                    <span id="questionProgressBar"></span>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-number" id="questionNumber">QUESTION 01</p>
+                    <h3 id="questionText"></h3>
+                    <div id="answerOptions" class="answer-options"></div>
+                </div>
+
+                <p id="answerMessage" class="inline-message" role="status"></p>
+
+                <div class="question-actions">
+                    <button id="previousQuestion" class="secondary-button" type="button">
+                        Previous
+                    </button>
+
+                    <button id="nextQuestion" class="primary-button" type="button">
+                        Next question →
+                    </button>
+
+                    <button id="submitAssessment" class="primary-button hidden" type="button">
+                        Submit assessment
+                    </button>
+                </div>
+
+                <p class="disclaimer">
+                    This activity is for personal reflection and educational purposes only.
+                    It does not provide a medical diagnosis.
+                </p>
+            </section>
+
+            <section id="resultView" class="result-panel hidden" aria-live="polite">
+                <div class="result-symbol">
+                    <i data-lucide="heart"></i>
+                </div>
+
+                <p class="eyebrow">YOUR REFLECTION SUMMARY</p>
+                <h2 id="resultTitle">Assessment completed</h2>
+                <p id="resultSummary" class="result-summary"></p>
+
+                <div class="result-score">
+                    <span>Your reflection score</span>
+                    <strong id="resultScore">0 / 24</strong>
+                    <small id="resultLevel"></small>
+                </div>
+
+                <div class="recommendation-box">
+                    <h3>A gentle next step</h3>
+                    <p id="resultRecommendation"></p>
+                </div>
+
+                <div class="result-actions">
+                    <button id="retakeAssessment" class="secondary-button" type="button">
+                        Retake assessment
+                    </button>
+
+                    <button id="finishAssessment" class="primary-button" type="button">
+                        Back to assessments
+                    </button>
+                </div>
+
+                <p class="disclaimer">
+                    Your score is a reflection aid, not a clinical assessment or diagnosis.
+                    If these concerns are affecting your daily life, consider speaking
+                    with a qualified counselor or health professional.
+                </p>
+            </section>
+
+            <footer class="dashboard-footer">
+                <span>© 2026 StillWell</span>
+                <span>Small steps. Meaningful progress. ♡</span>
+            </footer>
+        </div>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/assessment.js"></script>
+<script>
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
+    const dateElement = document.getElementById("todayDate");
+
+    dateElement.textContent = new Date().toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+    });
+
+    const sidebar = document.getElementById("sidebar");
+    const sidebarToggle = document.getElementById("sidebarToggle");
+
+    sidebarToggle.addEventListener("click", function () {
+        const isExpanded = sidebar.classList.toggle("expanded");
+        sidebarToggle.setAttribute("aria-expanded", String(isExpanded));
+
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    });
+    
+</script>
+<script src="js/ai-assistant.js"></script>
+</body>
+</html>

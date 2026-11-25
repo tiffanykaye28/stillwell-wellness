@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StillWell | Mood Tracker</title>
+    <link rel="stylesheet" href="css/mood.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div class="dashboard-container" id="dashboardContainer">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon"><i data-lucide="flower-2"></i></div>
+            <h2>StillWell</h2>
+            <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Expand sidebar">
+                <i data-lucide="panel-left-close"></i>
+            </button>
+        </div>
+
+        <p class="menu-label">MAIN MENU</p>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item" data-tooltip="Overview">
+                <span class="menu-icon"><i data-lucide="layout-dashboard"></i></span>
+                <span class="menu-text">Overview</span>
+            </a>
+
+            <a href="mood-tracker.html" class="menu-item active" aria-current="page" data-tooltip="Mood Tracker">
+                <span class="menu-icon"><i data-lucide="smile"></i></span>
+                <span class="menu-text">Mood Tracker</span>
+            </a>    
+
+            <a href="assessment.html" class="menu-item" data-tooltip="Self-Assessment">                <span class="menu-icon"><i data-lucide="clipboard-check"></i></span>
+                <span class="menu-text">Self-Assessment</span>
+            </a>
+
+            <a href="recommendations.html" class="menu-item">
+                <span class="menu-icon"><i data-lucide="heart-handshake"></i></span>
+                <span class="menu-text">Recommendations</span>
+            </a>
+
+            <p class="menu-label">LEARNING</p>
+
+            <a href="#" class="menu-item" data-tooltip="Resources">
+                <span class="menu-icon"><i data-lucide="book-open"></i></span>
+                <span class="menu-text">Resources</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Educational Games">
+                <span class="menu-icon"><i data-lucide="gamepad-2"></i></span>
+                <span class="menu-text">Educational Games</span>
+            </a>
+
+            <a href="course-library.html" class="menu-item" data-tooltip="Self-paced Courses">
+                <span class="menu-icon"><i data-lucide="graduation-cap"></i></span>
+                <span class="menu-text">Self-paced Courses</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Achievements">
+                <span class="menu-icon"><i data-lucide="trophy"></i></span>
+                <span class="menu-text">Achievements</span>
+            </a>
+
+            <p class="menu-label">PERSONAL</p>
+
+            <a href="#" class="menu-item" data-tooltip="Professional Counseling">
+                <span class="menu-icon"><i data-lucide="calendar-heart"></i></span>
+                <span class="menu-text">Professional Counseling</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Profile">
+                <span class="menu-icon"><i data-lucide="user-round"></i></span>
+                <span class="menu-text">Profile</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="menu-item" data-tooltip="Settings">
+                <span class="menu-icon"><i data-lucide="settings"></i></span>
+                <span class="menu-text">Settings</span>
+            </a>
+
+            <button class="menu-item logout-link" id="logoutButton" type="button" data-tooltip="Log Out">
+                <span class="menu-icon"><i data-lucide="log-out"></i></span>
+                <span class="menu-text">Log Out</span>
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="topbar-greeting">YOUR PERSONAL WELLNESS SPACE</p>
+                <h2>Mood Tracker</h2>
+            </div>
+
+            <div class="topbar-right">
+                <div class="today-date" id="todayDate"></div>
+                <div class="profile-avatar" id="profileInitial">S</div>
+            </div>
+        </header>
+
+        <section class="page-content">
+            <section class="mood-hero">
+                <div class="hero-text">
+                    <span class="hero-tag">
+                        <i data-lucide="heart"></i>
+                        DAILY CHECK-IN
+                    </span>
+
+                    <h1>How are you feeling <span>today?</span></h1>
+
+                    <p>
+                        Take a moment for yourself. Recognize your emotions,
+                        understand what's affecting you, and give yourself
+                        space to express how you feel.
+                    </p>
+
+                    <div class="hero-note">
+                        <i data-lucide="shield-check"></i>
+                        Your mood check-in is personal and private.
+                    </div>
+                </div>
+
+                <div class="hero-decoration">
+                    <div class="hero-circle circle-one"></div>
+                    <div class="hero-circle circle-two"></div>
+                    <div class="hero-emoji">🌷</div>
+                    <span class="floating-heart">♡</span>
+                </div>
+            </section>
+
+            <form id="moodForm">
+
+                <section class="content-card">
+                    <div class="section-heading">
+                        <div class="step-number">01</div>
+                        <div>
+                            <h2>Choose your mood</h2>
+                            <p>Which emotion best describes how you feel right now?</p>
+                        </div>
+                    </div>
+
+                    <div class="mood-grid">
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="happy" required>
+                            <span class="mood-emoji">😊</span>
+                            <span class="mood-name">Happy</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="loved">
+                            <span class="mood-emoji">🥰</span>
+                            <span class="mood-name">Loved</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="calm">
+                            <span class="mood-emoji">😌</span>
+                            <span class="mood-name">Calm</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="neutral">
+                            <span class="mood-emoji">😐</span>
+                            <span class="mood-name">Neutral</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="sad">
+                            <span class="mood-emoji">😔</span>
+                            <span class="mood-name">Sad</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="lonely">
+                            <span class="mood-emoji">😢</span>
+                            <span class="mood-name">Lonely</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="anxious">
+                            <span class="mood-emoji">😟</span>
+                            <span class="mood-name">Anxious</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="stressed">
+                            <span class="mood-emoji">😫</span>
+                            <span class="mood-name">Stressed</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="angry">
+                            <span class="mood-emoji">😡</span>
+                            <span class="mood-name">Angry</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="disappointed">
+                            <span class="mood-emoji">😞</span>
+                            <span class="mood-name">Disappointed</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="tired">
+                            <span class="mood-emoji">😴</span>
+                            <span class="mood-name">Tired</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="confused">
+                            <span class="mood-emoji">😕</span>
+                            <span class="mood-name">Confused</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="overwhelmed">
+                            <span class="mood-emoji">😰</span>
+                            <span class="mood-name">Overwhelmed</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="hurt">
+                            <span class="mood-emoji">🥺</span>
+                            <span class="mood-name">Hurt</span>
+                        </label>
+
+                        <label class="mood-option">
+                            <input type="radio" name="mood" value="emotionally_numb">
+                            <span class="mood-emoji">😶</span>
+                            <span class="mood-name">Emotionally Numb</span>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="content-card">
+                    <div class="section-heading">
+                        <div class="step-number">02</div>
+                        <div>
+                            <h2>What's affecting your mood?</h2>
+                            <p>Select all the situations that relate to how you feel.</p>
+                        </div>
+                    </div>
+
+                    <div class="reason-grid">
+                        <label class="reason-option">
+                            <input type="checkbox" name="reasons" value="Family & Home">
+                            <span class="reason-icon family"><i data-lucide="house"></i></span>
+                            <span class="reason-text">
+                                <strong>Family & Home</strong>
+                                <small>Family concerns and home situations</small>
+                            </span>
+                            <i data-lucide="check-circle-2" class="reason-check"></i>
+                        </label>
+
+                        <label class="reason-option">
+                            <input type="checkbox" name="reasons" value="Relationship & Love Life">
+                            <span class="reason-icon relationship"><i data-lucide="heart"></i></span>
+                            <span class="reason-text">
+                                <strong>Relationship & Love Life</strong>
+                                <small>Romantic relationships and feelings</small>
+                            </span>
+                            <i data-lucide="check-circle-2" class="reason-check"></i>
+                        </label>
+
+                        <label class="reason-option">
+                            <input type="checkbox" name="reasons" value="Friends & Social Life">
+                            <span class="reason-icon friends"><i data-lucide="users"></i></span>
+                            <span class="reason-text">
+                                <strong>Friends & Social Life</strong>
+                                <small>Friendship and social experiences</small>
+                            </span>
+                            <i data-lucide="check-circle-2" class="reason-check"></i>
+                        </label>
+
+                        <label class="reason-option">
+                            <input type="checkbox" name="reasons" value="School & Education">
+                            <span class="reason-icon school"><i data-lucide="graduation-cap"></i></span>
+                            <span class="reason-text">
+                                <strong>School & Education</strong>
+                                <small>Academic pressure and schoolwork</small>
+                            </span>
+                            <i data-lucide="check-circle-2" class="reason-check"></i>
+                        </label>
+
+                        <label class="reason-option">
+                            <input type="checkbox" name="reasons" value="Financial & Money Matters">
+                            <span class="reason-icon finance"><i data-lucide="wallet"></i></span>
+                            <span class="reason-text">
+                                <strong>Financial & Money Matters</strong>
+                                <small>Allowance, expenses and finances</small>
+                            </span>
+                            <i data-lucide="check-circle-2" class="reason-check"></i>
+                        </label>
+
+                        <label class="reason-option">
+                            <input type="checkbox" name="reasons" value="Personal & Self">
+                            <span class="reason-icon personal"><i data-lucide="user-round"></i></span>
+                            <span class="reason-text">
+                                <strong>Personal & Self</strong>
+                                <small>Self-esteem and personal struggles</small>
+                            </span>
+                            <i data-lucide="check-circle-2" class="reason-check"></i>
+                        </label>
+
+                        <label class="reason-option">
+                            <input type="checkbox" name="reasons" value="Health & Well-being">
+                            <span class="reason-icon health"><i data-lucide="heart-pulse"></i></span>
+                            <span class="reason-text">
+                                <strong>Health & Well-being</strong>
+                                <small>Physical health, sleep and energy</small>
+                            </span>
+                            <i data-lucide="check-circle-2" class="reason-check"></i>
+                        </label>
+
+                        <label class="reason-option">
+                            <input type="checkbox" name="reasons" value="Other / Something Else">
+                            <span class="reason-icon other"><i data-lucide="cloud"></i></span>
+                            <span class="reason-text">
+                                <strong>Other / Something Else</strong>
+                                <small>Other situations not listed here</small>
+                            </span>
+                            <i data-lucide="check-circle-2" class="reason-check"></i>
+                        </label>
+
+                        <label class="reason-option">
+                            <input type="checkbox" name="reasons" value="Prefer not to say">
+                            <span class="reason-icon private"><i data-lucide="lock"></i></span>
+                            <span class="reason-text">
+                                <strong>Prefer not to say</strong>
+                                <small>Keep the reason to yourself</small>
+                            </span>
+                            <i data-lucide="check-circle-2" class="reason-check"></i>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="content-card journal-card">
+                    <div class="section-heading">
+                        <div class="step-number">03</div>
+                        <div>
+                            <h2>Write about your feelings</h2>
+                            <p>Share anything you want. This part is completely optional.</p>
+                        </div>
+                    </div>
+
+                    <textarea
+                        id="moodNotes"
+                        maxlength="2000"
+                        placeholder="What's on your mind today? You can write about your experiences, thoughts, or anything you'd like to express..."
+                    ></textarea>
+
+                    <div class="journal-footer">
+                        <span>
+                            <i data-lucide="lock"></i>
+                            Your journal is private.
+                        </span>
+                        <span id="characterCount">0 / 2000</span>
+                    </div>
+                </section>
+
+                <div class="submit-area">
+                    <div class="submit-reminder">
+                        <i data-lucide="heart"></i>
+                        Remember, every feeling deserves to be acknowledged.
+                    </div>
+
+                    <button type="submit" class="save-mood-button" id="saveMoodButton">
+                        <i data-lucide="save"></i>
+                        Save My Mood
+                    </button>
+
+                    <p id="moodMessage" aria-live="polite"></p>
+                </div>
+            </form>
+        </section>
+
+        <footer class="page-footer">
+            Made with care by StillWell <span>♡</span>
+        </footer>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+
+<script>
+    lucide.createIcons();
+
+    // Automatic sidebar hover
+    const sidebar = document.getElementById("sidebar");
+    const dashboardContainer = document.getElementById("dashboardContainer");
+
+    sidebar.addEventListener("mouseenter", () => {
+        sidebar.classList.add("expanded");
+        dashboardContainer.classList.add("sidebar-expanded");
+    });
+
+    sidebar.addEventListener("mouseleave", () => {
+        sidebar.classList.remove("expanded");
+        dashboardContainer.classList.remove("sidebar-expanded");
+    });
+
+    // Display today's date
+    document.getElementById("todayDate").textContent =
+        new Date().toLocaleDateString("en-PH", {
+            weekday: "long",
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+        });
+
+    // Highlight selected mood
+    document.querySelectorAll('input[name="mood"]').forEach(input => {
+        input.addEventListener("change", () => {
+            document.querySelectorAll(".mood-option").forEach(option => {
+                option.classList.remove("selected");
+            });
+
+            input.closest(".mood-option").classList.add("selected");
+        });
+    });
+
+    // Character counter
+    const notesField = document.getElementById("moodNotes");
+    const characterCount = document.getElementById("characterCount");
+
+    notesField.addEventListener("input", () => {
+        characterCount.textContent = notesField.value.length + " / 2000";
+    });
+
+    // Load student information
+    async function loadStudentInfo() {
+        if (!window.supabaseClient) return;
+
+        const { data, error } =
+            await window.supabaseClient.auth.getUser();
+
+        if (error || !data.user) {
+            window.location.href = "index.html";
+            return;
+        }
+
+        const initial = data.user.email
+            ? data.user.email.charAt(0).toUpperCase()
+            : "S";
+
+        document.getElementById("profileInitial").textContent = initial;
+    }
+
+    loadStudentInfo();
+
+    // Save mood
+    const moodForm = document.getElementById("moodForm");
+    const moodMessage = document.getElementById("moodMessage");
+    const saveMoodButton = document.getElementById("saveMoodButton");
+
+    moodForm.addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        moodMessage.textContent = "";
+        moodMessage.className = "";
+
+        const selectedMood = document.querySelector(
+            'input[name="mood"]:checked'
+        );
+
+        const selectedReasons = Array.from(
+            document.querySelectorAll('input[name="reasons"]:checked')
+        ).map(input => input.value);
+
+        const notes = notesField.value.trim();
+
+        if (!selectedMood) {
+            moodMessage.textContent = "Please select your mood first.";
+            moodMessage.className = "message-error";
+            return;
+        }
+
+        if (selectedReasons.includes("Prefer not to say") &&
+            selectedReasons.length > 1) {
+            moodMessage.textContent =
+                "Please select 'Prefer not to say' alone, or choose other reasons.";
+            moodMessage.className = "message-error";
+            return;
+        }
+
+        if (!window.supabaseClient) {
+            moodMessage.textContent =
+                "Database connection unavailable. Please try again.";
+            moodMessage.className = "message-error";
+            return;
+        }
+
+        try {
+            saveMoodButton.disabled = true;
+            saveMoodButton.innerHTML = "Saving your mood...";
+
+            const { data: userData, error: userError } =
+                await window.supabaseClient.auth.getUser();
+
+            if (userError) throw userError;
+
+            if (!userData.user) {
+                window.location.href = "index.html";
+                return;
+            }
+
+            const { error } = await window.supabaseClient
+                .from("mood_logs")
+                .insert({
+                    user_id: userData.user.id,
+                    mood: selectedMood.value,
+                    reason_categories: selectedReasons,
+                    notes: notes || null
+                });
+
+            if (error) throw error;
+
+            moodMessage.textContent =
+                "Your mood has been saved successfully! Take care of yourself. 💜";
+            moodMessage.className = "message-success";
+
+            moodForm.reset();
+
+            document.querySelectorAll(".mood-option").forEach(option => {
+                option.classList.remove("selected");
+            });
+
+            characterCount.textContent = "0 / 2000";
+
+        } catch (error) {
+            console.error("Mood saving error:", error);
+
+            moodMessage.textContent = "Error: " + error.message;
+            moodMessage.className = "message-error";
+
+        } finally {
+            saveMoodButton.disabled = false;
+            saveMoodButton.innerHTML =
+                '<i data-lucide="save"></i> Save My Mood';
+
+            lucide.createIcons();
+        }
+    });
+
+    // Log out
+    document.getElementById("logoutButton").addEventListener("click", async () => {
+        if (!window.supabaseClient) {
+            window.location.href = "index.html";
+            return;
+        }
+
+        const { error } = await window.supabaseClient.auth.signOut();
+
+        if (error) {
+            alert("Unable to log out. Please try again.");
+            return;
+        }
+
+        window.location.href = "index.html";
+    });
+</script>
+<script src="js/ai-assistant.js"></script>
+</body>
+</html>

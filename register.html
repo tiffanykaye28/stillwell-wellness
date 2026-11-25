@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StillWell | Create Account</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- LEFT PANEL -->
+        <section class="welcome-section">
+
+            <div class="brand">
+                <h1>StillWell <span>.</span></h1>
+                <p class="tagline">Your little space for mental wellness.</p>
+            </div>
+
+            <img
+                src="assets/mascot.png"
+                alt="StillWell Mascot"
+                class="mascot"
+            >
+
+            <div class="welcome-message">
+                <span class="eyebrow">YOUR WELLBEING SPACE</span>
+
+                <h2>
+                    Start your journey.<br>
+                    One step at a time.
+                </h2>
+
+                <p>
+                    Create your personal space and make your mental wellness a priority.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT PANEL -->
+        <section class="login-section">
+
+            <div class="login-form">
+
+                <span class="eyebrow">GET STARTED</span>
+
+                <h2>Create account</h2>
+
+                <p class="form-description">
+                    Join StillWell and begin your wellness journey.
+                </p>
+
+
+                <form id="registerForm">
+
+                    <!-- FULL NAME -->
+                    <div class="form-group">
+
+                        <label for="fullname">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="fullname"
+                            name="fullname"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="form-group">
+
+                        <label for="password">Password</label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="At least 8 characters"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                data-target="password"
+                                aria-label="Show password"
+                            >
+                                <span>👁</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+                    <div class="form-group">
+
+                        <label for="confirmPassword">Confirm Password</label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                data-target="confirmPassword"
+                                aria-label="Show confirm password"
+                            >
+                                <span>👁</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TERMS AND CONDITIONS -->
+                    <div class="terms">
+
+                        <input
+                            type="checkbox"
+                            id="agree"
+                            name="agree"
+                            required
+                        >
+
+                        <label for="agree">
+                            I agree to the
+                            <a href="#">Terms of Use</a>
+                            and
+                            <a href="#">Privacy Policy</a>.
+                        </label>
+
+                    </div>
+
+
+                    <!-- CREATE ACCOUNT BUTTON -->
+                     <p id="passwordError" class="password-error"></p>
+                    <button type="submit" class="login-button">
+                        Create Account →
+                    </button>
+
+                </form>
+
+
+                <!-- LOGIN LINK -->
+                <div class="login-links register-login">
+
+                    <p>
+                        Already have an account?
+                        <a href="index.html">Log in</a>
+                    </p>
+
+                </div>
+
+
+                <!-- FOOTER LINKS -->
+                <div class="footer-links">
+
+                    <a href="#">Need urgent help?</a>
+
+                    <a href="#">Privacy policy</a>
+
+                    <a href="#">Terms of use</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+<!-- SUCCESS MODAL -->
+<div class="success-overlay" id="successModal">
+
+    <div class="success-modal">
+
+        <div class="success-icon">✓</div>
+
+        <h2>Account Created!</h2>
+
+        <p id="successMessage">
+            Your StillWell account has been created successfully.
+        </p>
+
+        <button type="button" id="successButton">
+            Continue
+        </button>
+
+    </div>
+
+</div>
+    <!-- Supabase Library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Supabase Configuration -->
+<script src="js/supabase.js"></script>
+
+<!-- Existing JavaScript -->
+<script src="js/script.js"></script>
+</body>
+</html>

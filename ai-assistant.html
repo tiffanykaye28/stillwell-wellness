@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StillWell AI Assistant</title>
+
+    <link rel="stylesheet" href="css/ai-assistant.css">
+</head>
+<body>
+
+    
+<!-- STILLWELL FLOATING AI ASSISTANT -->
+
+<button id="aiChatButton" class="ai-chat-button" aria-label="Open StillWell Assistant">
+    <span>💬</span>
+</button>
+
+<div id="aiChatWidget" class="ai-chat-widget" hidden>
+
+    <!-- HEADER -->
+    <div class="ai-chat-header">
+        <div class="ai-header-info">
+            <div class="ai-avatar">🌱</div>
+            <div>
+                <h3>StillWell Assistant</h3>
+                <p>Your little space for support</p>
+            </div>
+        </div>
+
+        <button id="aiCloseButton" aria-label="Close chat">×</button>
+    </div>
+
+    <!-- WELCOME SCREEN -->
+    <div id="aiWelcomeScreen" class="ai-welcome-screen">
+        <div class="ai-welcome-icon">🌷</div>
+
+        <h2>Hello! Welcome to StillWell.</h2>
+
+        <p>
+            How can I help you today?
+            Choose how you would like to interact with me.
+        </p>
+
+        <button class="ai-mode-button" data-mode="ask">
+            <span>💡</span>
+            <div>
+                <strong>Ask StillWell</strong>
+                <small>Get help using the StillWell system.</small>
+            </div>
+        </button>
+
+        <button class="ai-mode-button" data-mode="talk">
+            <span>💗</span>
+            <div>
+                <strong>Talk to StillWell</strong>
+                <small>Share your thoughts and feelings.</small>
+            </div>
+        </button>
+    </div>
+
+    <!-- CHAT SCREEN -->
+    <div id="aiChatScreen" class="ai-chat-screen" hidden>
+
+        <div class="ai-chat-mode">
+            <button id="aiBackButton">←</button>
+            <span id="aiModeTitle">Ask StillWell</span>
+        </div>
+
+        <div id="aiMessages" class="ai-messages">
+            <div class="ai-message bot">
+                Hello! I'm here to help. What would you like to talk about?
+            </div>
+        </div>
+
+        <form id="aiChatForm" class="ai-chat-form">
+            <input
+                type="text"
+                id="aiMessageInput"
+                placeholder="Type your message..."
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit" aria-label="Send message">➤</button>
+        </form>
+
+    </div>
+
+</div>
+
+
+        <!-- WELCOME SCREEN -->
+        <div id="aiWelcomeScreen" class="ai-welcome-screen">
+            <div class="ai-welcome-icon">🌷</div>
+
+            <h2>Hello! Welcome to StillWell.</h2>
+
+            <p>
+                How can I help you today?
+                Choose how you would like to interact with me.
+            </p>
+
+            <button class="ai-mode-button" data-mode="ask">
+                <span>💡</span>
+                <div>
+                    <strong>Ask StillWell</strong>
+                    <small>Get help using the StillWell system.</small>
+                </div>
+            </button>
+
+            <button class="ai-mode-button" data-mode="talk">
+                <span>💗</span>
+                <div>
+                    <strong>Talk to StillWell</strong>
+                    <small>Share your thoughts and feelings.</small>
+                </div>
+            </button>
+        </div>
+
+        <!-- CHAT SCREEN -->
+        <div id="aiChatScreen" class="ai-chat-screen" hidden>
+
+            <div class="ai-chat-mode">
+                <button id="aiBackButton">←</button>
+                <span id="aiModeTitle">Ask StillWell</span>
+            </div>
+
+            <div id="aiMessages" class="ai-messages">
+                <div class="ai-message bot">
+                    Hello! I'm here to help. What would you like to talk about?
+                </div>
+            </div>
+
+            <form id="aiChatForm" class="ai-chat-form">
+                <input
+                    type="text"
+                    id="aiMessageInput"
+                    placeholder="Type your message..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" aria-label="Send message">
+                    ➤
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="js/ai-assistant.js"></script>
+    
+
+</body>
+</html>

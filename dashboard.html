@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StillWell | Student Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+<div class="dashboard-container" id="dashboardContainer">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i data-lucide="flower-2"></i>
+            </div>
+
+            <h2>StillWell</h2>
+
+            <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Expand sidebar">
+                <i data-lucide="panel-left-close"></i>
+            </button>
+        </div>
+
+        <p class="menu-label">MAIN MENU</p>
+
+        <nav class="sidebar-menu">
+
+            <a href="#" class="menu-item active" data-tooltip="Overview">
+                <span class="menu-icon"><i data-lucide="layout-dashboard"></i></span>
+                <span class="menu-text">Overview</span>
+            </a>
+
+            <a href="mood-tracker.html" class="menu-item" data-tooltip="Mood Tracker">
+                <span class="menu-icon">
+                    <i data-lucide="smile"></i>
+                </span>
+                <span class="menu-text">Mood Tracker</span>
+            </a>
+
+            <!-- SELF-ASSESSMENT LINK -->
+            <a href="assessment.html" class="menu-item" data-tooltip="Self-Assessment">
+                <span class="menu-icon"><i data-lucide="clipboard-list"></i></span>
+                <span class="menu-text">Self-Assessment</span>
+            </a>
+
+              <a href="recommendations.html" class="menu-item">
+                <span class="menu-icon"><i data-lucide="heart-handshake"></i></span>
+                <span class="menu-text">Recommendations</span>
+            </a>
+
+            <p class="menu-label">LEARNING</p>
+
+            <a href="#" class="menu-item" data-tooltip="Mental Health Resources">
+                <span class="menu-icon"><i data-lucide="book-open"></i></span>
+                <span class="menu-text">Mental Health Resources</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Educational Games">
+                <span class="menu-icon"><i data-lucide="gamepad-2"></i></span>
+                <span class="menu-text">Educational Games</span>
+            </a>
+
+            <a href="course-library.html" class="menu-item" data-tooltip="Self-paced Courses">
+                <span class="menu-icon"><i data-lucide="graduation-cap"></i></span>
+                <span class="menu-text">Self-paced Courses</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Achievements">
+                <span class="menu-icon"><i data-lucide="trophy"></i></span>
+                <span class="menu-text">Achievements</span>
+            </a>
+
+                        <p class="menu-label">PERSONAL</p>
+            <a href="#" class="menu-item" data-tooltip="Professional Counseling">
+                <span class="menu-icon"><i data-lucide="calendar-heart"></i></span>
+                <span class="menu-text">Professional Counseling</span>
+            </a>
+            <a href="#" class="menu-item" data-tooltip="Profile">
+                <span class="menu-icon"><i data-lucide="user-round"></i></span>
+                <span class="menu-text">Profile</span>
+            </a>
+          
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="menu-item" data-tooltip="Settings">
+                <span class="menu-icon"><i data-lucide="settings"></i></span>
+                <span class="menu-text">Settings</span>
+            </a>
+
+            <a href="index.html" class="menu-item logout-link" data-tooltip="Log Out">
+                <span class="menu-icon"><i data-lucide="log-out"></i></span>
+                <span class="menu-text">Log Out</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+            <div>
+                <p class="header-date">YOUR PERSONAL WELLNESS SPACE</p>
+                <h1>Student Dashboard</h1>
+                <p class="header-subtitle">A gentle space to check in, learn, and grow.</p>
+            </div>
+
+            <div class="header-profile">
+
+                <button class="icon-button notification" type="button">
+                    <i data-lucide="bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile-info">
+                    <div class="profile-avatar">S</div>
+
+                    <div>
+                        <h4 id="studentName">Student</h4>
+                        <p>Student Account</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- WELCOME SECTION -->
+        <section class="welcome-card">
+
+            <div class="welcome-text">
+
+                <p class="welcome-label">A LITTLE CHECK-IN GOES A LONG WAY</p>
+
+                <h2>
+                    Hello, <span id="welcomeName">Student</span>!
+                    <b>✦</b>
+                </h2>
+
+                <p>
+                    Take a deep breath. Your well-being matters,
+                    and every small step counts. How are you feeling today?
+                </p>
+
+                <a href="mood-tracker.html" class="welcome-button">
+                    <i data-lucide="heart-pulse"></i>
+                    Check Your Mood
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="welcome-illustration">
+                <div class="illustration-orbit"></div>
+                <img src="assets/mascot.png" alt="StillWell mascot">
+            </div>
+
+            <div class="welcome-decoration decoration-one"></div>
+            <div class="welcome-decoration decoration-two"></div>
+
+        </section>
+
+
+        <!-- WELLNESS OVERVIEW -->
+        <section class="summary-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">YOUR JOURNEY</p>
+                    <h2>Your Wellness Overview</h2>
+                    <p>A quick look at your recent activity</p>
+                </div>
+
+                <span class="period-pill">
+                    <i data-lucide="calendar-days"></i>
+                    Your progress
+                </span>
+
+            </div>
+
+
+            <div class="summary-grid">
+
+                <article class="summary-card">
+
+                    <div class="summary-top">
+                        <span class="summary-icon">
+                            <i data-lucide="smile"></i>
+                        </span>
+                        <span class="card-kicker">DAILY CHECK-IN</span>
+                    </div>
+
+                    <p>Today's Mood</p>
+                    <h3 id="todayMood">Not recorded</h3>
+                    <span class="summary-note">Make space for how you feel.</span>
+
+                </article>
+
+
+                <article class="summary-card pink-card">
+
+                    <div class="summary-top">
+                        <span class="summary-icon">
+                            <i data-lucide="clipboard-check"></i>
+                        </span>
+                        <span class="card-kicker">SELF-AWARENESS</span>
+                    </div>
+
+                    <p>Assessments</p>
+                    <h3 id="assessmentCount">0</h3>
+                    <span class="summary-note">Completed assessments</span>
+
+                </article>
+
+
+                <article class="summary-card gold-card">
+
+                    <div class="summary-top">
+                        <span class="summary-icon">
+                            <i data-lucide="sparkles"></i>
+                        </span>
+                        <span class="card-kicker">MILESTONES</span>
+                    </div>
+
+                    <p>Total Points</p>
+                    <h3 id="totalPoints">0</h3>
+                    <span class="summary-note">Keep learning and growing</span>
+
+                </article>
+
+
+                <article class="summary-card green-card">
+
+                    <div class="summary-top">
+                        <span class="summary-icon">
+                            <i data-lucide="book-check"></i>
+                        </span>
+                        <span class="card-kicker">YOUR LEARNING</span>
+                    </div>
+
+                    <p>Courses Completed</p>
+                    <h3 id="completedCourses">0</h3>
+                    <span class="summary-note">One lesson at a time</span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPLORE STILLWELL -->
+        <section class="quick-access">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">EXPLORE AND DISCOVER</p>
+                    <h2>Explore StillWell</h2>
+                    <p>Choose what feels helpful for you today</p>
+                </div>
+
+                <span class="soft-note">Your pace, your journey</span>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <a href="mood-tracker.html" class="feature-card">
+                    <span class="feature-icon purple">
+                        <i data-lucide="smile"></i>
+                    </span>
+                    <h3>Mood Tracker</h3>
+                    <p>Record your feelings and notice your mood patterns over time.</p>
+                    <span class="feature-link">Check in <i data-lucide="arrow-up-right"></i></span>
+                </a>
+
+
+                <!-- SELF-ASSESSMENT FEATURE CARD -->
+                <a href="assessment.html" class="feature-card">
+                    <span class="feature-icon pink">
+                        <i data-lucide="clipboard-list"></i>
+                    </span>
+                    <h3>Self-Assessment</h3>
+                    <p>Reflect on your emotional well-being with guided questionnaires.</p>
+                    <span class="feature-link">Start assessment <i data-lucide="arrow-up-right"></i></span>
+                </a>
+
+
+                <a href="#" class="feature-card">
+                    <span class="feature-icon blue">
+                        <i data-lucide="messages-square"></i>
+                    </span>
+                    <h3>AI Chatbot</h3>
+                    <p>Explore supportive conversations and helpful self-care guidance.</p>
+                    <span class="feature-link">Chat now <i data-lucide="arrow-up-right"></i></span>
+                </a>
+
+
+                <a href="#" class="feature-card">
+                    <span class="feature-icon green">
+                        <i data-lucide="heart-handshake"></i>
+                    </span>
+                    <h3>Recommendations</h3>
+                    <p>Find calming activities and practical wellness suggestions.</p>
+                    <span class="feature-link">View suggestions <i data-lucide="arrow-up-right"></i></span>
+                </a>
+
+
+                <a href="#" class="feature-card">
+                    <span class="feature-icon orange">
+                        <i data-lucide="book-open"></i>
+                    </span>
+                    <h3>Mental Health Resources</h3>
+                    <p>Read articles and explore educational videos and materials.</p>
+                    <span class="feature-link">Learn more <i data-lucide="arrow-up-right"></i></span>
+                </a>
+
+
+                <a href="#" class="feature-card">
+                    <span class="feature-icon yellow">
+                        <i data-lucide="gamepad-2"></i>
+                    </span>
+                    <h3>Educational Games</h3>
+                    <p>Learn about mental wellness through engaging activities.</p>
+                    <span class="feature-link">Play and learn <i data-lucide="arrow-up-right"></i></span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOTTOM CARDS -->
+        <section class="bottom-grid">
+
+            <article class="bottom-card">
+
+                <div class="bottom-card-icon">
+                    <i data-lucide="graduation-cap"></i>
+                </div>
+
+                <div>
+                    <p class="eyebrow">GROW AT YOUR OWN PACE</p>
+                    <h2>Continue Learning</h2>
+                    <p>Explore self-paced courses and build healthy habits through small lessons.</p>
+
+                    <a href="course-library.html" class="text-link">
+                        View my courses
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="bottom-watermark">
+                    <i data-lucide="book-open-check"></i>
+                </div>
+
+            </article>
+
+
+            <article class="bottom-card counseling-card">
+
+                <div class="bottom-card-icon">
+                    <i data-lucide="calendar-heart"></i>
+                </div>
+
+                <div>
+                    <p class="eyebrow">YOU DON'T HAVE TO DO IT ALONE</p>
+                    <h2>Professional Counseling</h2>
+                    <p>Request support from the guidance counselor and check your request status.</p>
+
+                    <a href="#" class="text-link">
+                        Explore counseling
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="bottom-watermark">
+                    <i data-lucide="heart-handshake"></i>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+            <span>© 2026 StillWell</span>
+            <span>Small steps. Meaningful progress. <i data-lucide="heart"></i></span>
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+
+if (window.lucide) {
+    window.lucide.createIcons();
+}
+
+const sidebar = document.getElementById("sidebar");
+const toggle = document.getElementById("sidebarToggle");
+const container = document.getElementById("dashboardContainer");
+
+toggle.addEventListener("click", function () {
+
+    sidebar.classList.toggle("expanded");
+    container.classList.toggle("sidebar-expanded");
+
+    const expanded = sidebar.classList.contains("expanded");
+
+    toggle.setAttribute(
+        "aria-label",
+        expanded ? "Collapse sidebar" : "Expand sidebar"
+    );
+
+    toggle.setAttribute(
+        "title",
+        expanded ? "Collapse sidebar" : "Expand sidebar"
+    );
+
+});
+
+document.querySelectorAll(".menu-item").forEach(function (item) {
+
+    item.addEventListener("click", function () {
+
+        if (item.classList.contains("logout-link")) {
+            return;
+        }
+
+        document.querySelectorAll(".menu-item").forEach(function (link) {
+            link.classList.remove("active");
+        });
+
+        item.classList.add("active");
+
+    });
+
+});
+
+</script>
+<script src="js/ai-assistant.js"></script>
+</body>
+</html>

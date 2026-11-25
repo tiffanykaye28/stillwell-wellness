@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StillWell | Self-paced Courses</title>
+
+    <link rel="stylesheet" href="css/course-library.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+<div class="dashboard-container" id="dashboardContainer">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i data-lucide="brain"></i>
+            </div>
+            <h2>StillWell</h2>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html" class="menu-item" data-tooltip="Overview">
+                <span class="menu-icon"><i data-lucide="layout-dashboard"></i></span>
+                <span class="menu-text">Overview</span>
+            </a>
+
+            <a href="mood-tracker.html" class="menu-item" data-tooltip="Mood Tracker">
+                <span class="menu-icon"><i data-lucide="heart"></i></span>
+                <span class="menu-text">Mood Tracker</span>
+            </a>
+
+            <a href="assessment.html" class="menu-item" data-tooltip="Self-Assessment">
+                <span class="menu-icon"><i data-lucide="clipboard-check"></i></span>
+                <span class="menu-text">Self-Assessment</span>
+            </a>
+           
+            <a href="recommendations.html" class="menu-item">
+                <span class="menu-icon"><i data-lucide="lightbulb"></i></span>
+                <span class="menu-text">Recommendations</span>
+            </a>
+
+            <div class="menu-label">LEARNING</div>
+
+            <a href="#" class="menu-item" data-tooltip="Mental Health Resources">
+                <span class="menu-icon"><i data-lucide="book-open"></i></span>
+                <span class="menu-text">Mental Health Resources</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Educational Games">
+                <span class="menu-icon"><i data-lucide="gamepad-2"></i></span>
+                <span class="menu-text">Educational Games</span>
+            </a>
+
+            <a href="course-library.html" class="menu-item active" data-tooltip="Self-paced Courses">
+                <span class="menu-icon"><i data-lucide="graduation-cap"></i></span>
+                <span class="menu-text">Self-paced Courses</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Achievements">
+                <span class="menu-icon"><i data-lucide="trophy"></i></span>
+                <span class="menu-text">Achievements</span>
+            </a>
+
+            <div class="menu-label">PERSONAL</div>
+
+            <a href="#" class="menu-item" data-tooltip="Professional Counseling">
+                <span class="menu-icon"><i data-lucide="user-round-check"></i></span>
+                <span class="menu-text">Professional Counseling</span>
+            </a>
+
+            <a href="#" class="menu-item" data-tooltip="Profile">
+                <span class="menu-icon"><i data-lucide="user-round"></i></span>
+                <span class="menu-text">Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="menu-item" data-tooltip="Settings">
+                <span class="menu-icon"><i data-lucide="settings"></i></span>
+                <span class="menu-text">Settings</span>
+            </a>
+
+            <a href="index.html" class="menu-item logout-link" data-tooltip="Log Out">
+                <span class="menu-icon"><i data-lucide="log-out"></i></span>
+                <span class="menu-text">Log Out</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+            <div class="header-left">
+                <p class="header-subtitle">YOUR PERSONAL WELLNESS SPACE</p>
+            </div>
+
+            <div class="header-profile">
+                <span class="current-date" id="currentDate"></span>
+
+                <div class="profile-info">
+                    <div class="profile-avatar" id="profileAvatar">T</div>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- COURSE PAGE BANNER -->
+        <section class="page-heading">
+
+            <div class="page-heading-content">
+
+                <p class="eyebrow">LEARN • GROW • TAKE CARE</p>
+
+                <h1>Mental Wellness Course Library</h1>
+
+                <p>
+                    Discover helpful lessons and activities designed to support
+                    your mental well-being. Learn at your own pace and take
+                    meaningful steps toward a healthier you.
+                </p>
+
+                <div class="course-total">
+                    <span id="totalCourses">0</span>
+                    <small>Available Courses</small>
+                </div>
+
+            </div>
+
+            <div class="page-heading-decoration decoration-one"></div>
+            <div class="page-heading-decoration decoration-two"></div>
+
+        </section>
+
+
+        <!-- SEARCH AND FILTER -->
+        <div class="library-controls">
+
+            <div class="search-box">
+                <i data-lucide="search"></i>
+
+                <input
+                    type="text"
+                    id="searchCourse"
+                    placeholder="Search for a course..."
+                >
+            </div>
+
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+            </select>
+
+        </div>
+
+
+        <!-- CATEGORIES -->
+<!-- Categories are available through the dropdown filter -->
+<div id="categoryList" hidden></div>    
+
+
+        <!-- AVAILABLE COURSES -->
+        <section class="library-section">
+
+            <div class="section-heading">
+                <p class="eyebrow">CONTINUE YOUR JOURNEY</p>
+                <h2>Available Courses</h2>
+                <p>Explore learning materials and build healthier habits.</p>
+            </div>
+
+            <div class="course-grid" id="courseList"></div>
+
+            <div class="empty-state" id="emptyState" hidden>
+
+                <div class="empty-icon">
+                    <i data-lucide="book-x"></i>
+                </div>
+
+                <h3>No courses found</h3>
+                <p>Try searching for another course or selecting a different category.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- LESSON VIEWER -->
+        <section class="lesson-section" id="lessonSection" hidden>
+
+            <button id="backToCourses">
+                <i data-lucide="arrow-left"></i>
+                Back to Courses
+            </button>
+
+            <div class="lesson-header">
+
+                <p class="eyebrow">YOUR LEARNING JOURNEY</p>
+
+                <h2 id="selectedCourseTitle"></h2>
+
+                <p id="selectedCourseDescription"></p>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+            <div class="progress-container">
+
+                <div class="progress-info">
+                    <span>Your Learning Progress</span>
+                    <strong id="progressText">0% Complete</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+
+            </div>
+
+
+            <!-- LESSON CONTENT -->
+            <div class="lesson-layout">
+
+                <aside class="lesson-sidebar">
+
+                    <h3>
+                        <i data-lucide="list-checks"></i>
+                        Course Lessons
+                    </h3>
+
+                    <div id="lessonList"></div>
+
+                </aside>
+
+
+                <div class="lesson-content">
+
+                    <span class="eyebrow" id="lessonNumber">LESSON 1</span>
+
+                    <h2 id="lessonTitle">Select a Lesson</h2>
+
+                    <div id="lessonBody">
+                        Select a lesson from the list to start learning.
+                    </div>
+
+
+                    <!-- ACTIVITY -->
+                    <div class="activity-box" id="activityContainer" hidden>
+
+                        <h3>
+                            <i data-lucide="puzzle"></i>
+                            Learning Activity
+                        </h3>
+
+                        <div id="activityContent"></div>
+
+                    </div>
+
+
+                    <button id="completeLessonBtn">
+                        <i data-lucide="check-circle"></i>
+                        Mark as Complete
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+
+            <span>© 2026 StillWell. All rights reserved.</span>
+
+            <span>
+                <i data-lucide="heart"></i>
+                Your journey to better well-being starts here.
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/course-library.js" defer></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Current date
+    const dateElement = document.getElementById("currentDate");
+
+    if (dateElement) {
+        dateElement.textContent = new Date().toLocaleDateString("en-US", {
+            weekday: "long",
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+        });
+    }
+
+    // Lucide icons
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+
+});
+</script>
+<script src="js/ai-assistant.js"></script>
+</body>
+</html>
